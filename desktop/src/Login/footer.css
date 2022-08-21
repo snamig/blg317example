@@ -1,0 +1,25 @@
+.footer-container{
+    
+    display: flex;
+    flex-direction: column-reverse; 
+    justify-content: center;
+    align-items: center;
+    color: #9B7E46;
+    background-color: #E2EFDE;
+}
+
+.header h4{
+    margin: 10px;
+}
+
+.icons {
+    padding-top: 1rem;
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icons a {
+    color: #9B7E46;
+    text-decoration: none;
+}

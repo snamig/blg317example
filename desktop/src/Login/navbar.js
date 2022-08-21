@@ -2,9 +2,9 @@ import './navbar.css'
 const Navbar = () => {
     return (
         <>
-            <div className="container">
+            <div className="navbar-container">
                 <div className="logo">
-                    <p>Sikko Logo</p>
+                    Sikko Logo
                 </div>
                 <div className="login"> 
                     <button>
