@@ -20,3 +20,8 @@ h1, h3 {
     padding: 2rem;
     color: #E2EFDE;
 }
+
+img {
+    width: 600px;
+    height: auto;
+}
