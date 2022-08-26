@@ -1,12 +1,46 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack'
+import {createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import LoginScreen from './screens/LoginScreen';
+import SignUpScreeen from './screens/SignUpScreen';
+import MainScreen from './screens/MainScreen';
+
+const Stack = createNativeStackNavigator();
+const Bottom = createBottomTabNavigator();
+
+function UnautharizedScreens () {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Login" component={LoginScreen}/>
+      <Stack.Screen name="Sign Up" component={SignUpScreeen}/>
+    </Stack.Navigator>
+  )
+}
+
+function AutharizedScreens() {
+  return (
+    <Bottom.Navigator>
+      <Bottom.Screen name="Main Page" component={MainScreen}/>
+    </Bottom.Navigator>
+  )
+}
+
+function SwitchScreen(autharized) {
+  if (autharized) {
+    return <AutharizedScreens/>
+  }
+
+  return <UnautharizedScreens/>
+}
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <SwitchScreen/>
+    </NavigationContainer>
   );
 }
 
