@@ -7,13 +7,15 @@ import {createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import LoginScreen from './screens/LoginScreen';
 import SignUpScreeen from './screens/SignUpScreen';
 import MainScreen from './screens/MainScreen';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Stack = createNativeStackNavigator();
 const Bottom = createBottomTabNavigator();
 
 function UnautharizedScreens () {
   return (
-    <Stack.Navigator>
+    
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Login" component={LoginScreen}/>
       <Stack.Screen name="Sign Up" component={SignUpScreeen}/>
     </Stack.Navigator>
@@ -28,8 +30,8 @@ function AutharizedScreens() {
   )
 }
 
-function SwitchScreen(autharized) {
-  if (autharized) {
+function SwitchScreen(autharized = false) {
+  if (0) {
     return <AutharizedScreens/>
   }
 
